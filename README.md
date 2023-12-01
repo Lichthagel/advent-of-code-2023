@@ -8,6 +8,6 @@ When using Nix you can execute the code for a given day with `nix run .#dayXX --
 
 ## Solutions
 
-| Day                                       | Language | Part 1 | Part 2 | Solution |
-| ----------------------------------------- | -------- | ------ | ------ | -------- |
-| [01](https://adventofcode.com/2023/day/1) | Nim      | ✔      | ✔      | [Link](day01/main.nim) |
+| Day                                       | Language | Prior Experience | Part 1 | Part 2 | Solution               |
+| ----------------------------------------- | -------- | ---------------- | ------ | ------ | ---------------------- |
+| [01](https://adventofcode.com/2023/day/1) | Nim      | None             | ✔      | ✔      | [Link](day01/main.nim) |
