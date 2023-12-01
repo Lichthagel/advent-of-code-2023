@@ -1,6 +1,8 @@
 {pkgs ? import <nixpkgs> {}, ...}:
 pkgs.mkShell {
-  name = "aoc-2023-day-01";
+  name = "aoc2023-day01";
 
-  packages = [];
+  packages = with pkgs; [
+    nim2
+  ];
 }

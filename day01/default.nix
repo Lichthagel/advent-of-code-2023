@@ -4,10 +4,14 @@ pkgs.stdenv.mkDerivation {
 
   src = ./.;
 
+  nativeBuildInputs = with pkgs; [
+    nim2
+  ];
+
   buildInputs = [];
 
   buildPhase = ''
     mkdir -p $out/bin
-    g++ -o $out/bin/aoc2023-day01 $src/main.cpp
+    nim c --nimcache:$TMPDIR -o:$out/bin/aoc2023-day01 $src/main.nim
   '';
 }
