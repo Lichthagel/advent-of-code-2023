@@ -67,11 +67,19 @@ fn part2(input: &[&str]) -> u32 {
         .sum()
 }
 
-fn main() {
-    let input: Vec<&str> = include_str!("../input.txt").lines().collect();
+fn main() -> Result<(), &'static str> {
+    let args = std::env::args();
+
+    if args.len() < 2 {
+        return Err("Please specify an input file");
+    }
+
+    let input_path = args.skip(1).next().unwrap();
+    let input_str = std::fs::read_to_string(input_path).unwrap();
+    let input: Vec<&str> = input_str.lines().collect();
 
     println!("{}", part1(&input));
     println!("{}", part2(&input));
 
-    return;
+    return Ok(());
 }
