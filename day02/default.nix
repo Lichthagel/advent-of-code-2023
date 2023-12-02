@@ -1,14 +1,8 @@
-{pkgs ? import <nixpkgs> {}, ...}:
-pkgs.stdenv.mkDerivation {
-  name = "aoc2023-day02";
-
-  src = ./.;
-
-  nativeBuildInputs = [
-  ];
-
-  buildInputs = [];
-
-  buildPhase = ''
-  '';
-}
+{pkgs ? import <nixpkgs> {}, ...}: let
+  cargoToml = builtins.fromTOML (builtins.readFile ./Cargo.toml);
+in
+  pkgs.rustPlatform.buildRustPackage {
+    inherit (cargoToml.package) name version;
+    src = ./.;
+    cargoLock.lockFile = ./Cargo.lock;
+  }
