@@ -12,3 +12,4 @@ When using Nix you can execute the code for a given day with `nix run .#dayXX --
 | ----------------------------------------- | -------- | ---------------- | ------ | ------ | ------------------------- |
 | [01](https://adventofcode.com/2023/day/1) | Nim      | ⚫⚫⚫           | ✅     | ✅     | [Link](day01/main.nim)    |
 | [02](https://adventofcode.com/2023/day/2) | Rust     | 🟡🟡⚫           | ✅     | ✅     | [Link](day02/src/main.rs) |
+| [03](https://adventofcode.com/2023/day/3) | Julia    | ⚫⚫⚫           | ✅     | ✅     | [Link](day03/main.jl)     |
