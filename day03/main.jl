@@ -37,38 +37,27 @@ for (i, line) in enumerate(grid)
   end
 end
 
-# Sum part numbers
+# Check if a number has a neighboring character that satisfies predicate f
 function hasneighbor((i, j, k)::Tuple{Int64,Int64,Int64}, f::Function)::Bool
   # Line above
-  if i > 1
-    for p in max(1, j - 1):min(length(grid[i]), k + 1)
-      if f(i - 1, p)
-        return true
-      end
-    end
-  end
-
-  # Same line
-  if j > 1 && f(i, j - 1)
+  if i > 1 && max(1, j - 1):min(length(grid[i]), k + 1) .|> (p -> f(i - 1, p)) |> any
     return true
   end
 
-  if k < length(grid[i]) && f(i, k + 1)
+  # Same line
+  if (j > 1 && f(i, j - 1)) || (k < length(grid[i]) && f(i, k + 1))
     return true
   end
 
   # Line below
-  if i < length(grid)
-    for p in max(1, j - 1):min(length(grid[i]), k + 1)
-      if f(i + 1, p)
-        return true
-      end
-    end
+  if i < length(grid) && max(1, j - 1):min(length(grid[i]), k + 1) .|> (p -> f(i + 1, p)) |> any
+    return true
   end
 
   return false
 end
 
+# Check if a number is a part number
 function ispartnumber((i, j, k)::Tuple{Int64,Int64,Int64})::Bool
   function issysmbol(c::Char)
     return !isdigit(c) && c != '.'
@@ -79,16 +68,11 @@ end
 
 partNumbers = filter(ispartnumber, numbers)
 
-# part1 = 
-# numbers |>
-# filter(ispartnumber) |> 
-# map(x -> parse(Int64, join(grid[x[1]][x[2]:x[3]]))) |> 
-# sum
-
-part1 = sum(map(x -> parse(Int64, join(grid[x[1]][x[2]:x[3]])), partNumbers))
+part1 = partNumbers .|> (x -> parse(Int64, join(grid[x[1]][x[2]:x[3]]))) |> sum
 
 println(part1)
 
+# Find all potential gears
 potentialGears::Vector{Tuple{Int64,Int64}} = []
 
 for (i, line) in enumerate(grid)
@@ -99,24 +83,21 @@ for (i, line) in enumerate(grid)
   end
 end
 
+# Get the gear ratio of a (potential) gear or 0 if it is not a gear
 function gearRatio((p, q)::Tuple{Int64,Int64})::Int64
-  ratio::Int64 = 1
-  connectedPartNumbers::Int64 = 0
-
-  for (i, j, k) in partNumbers
-    if hasneighbor((i, j, k), (x, y) -> (x, y) == (p, q))
-      ratio *= parse(Int64, join(grid[i][j:k]))
-      connectedPartNumbers += 1
+  foldl((x, y) -> begin
+      if hasneighbor(y, (i, j) -> (i, j) == (p, q))
+        (x[1] + 1, x[2] * parse(Int64, join(grid[y[1]][y[2]:y[3]])))
+      else
+        x
+      end
+    end, partNumbers; init=(0, 1)) |> (x -> begin
+    if x[1] == 2
+      x[2]
+    else
+      0
     end
-  end
-
-  # println("Found gear at $(p), $(q) with ratio $(ratio) and $(connectedPartNumbers) connected part numbers")
-
-  if connectedPartNumbers == 2
-    return ratio
-  else
-    return 0
-  end
+  end)
 end
 
 part2 = potentialGears .|> gearRatio |> sum
