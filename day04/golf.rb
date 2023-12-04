@@ -3,7 +3,7 @@ require 'set'
 s = File.read("input.txt").split("\n")
 
 x = 0
-m = [1] * s.length
+m = s.map { 1 }
 
 for i in 0..s.length-1
   e = s[i].split(": ")[1].split(" | ").map { |e| e.split(" ").map(&:to_i).to_set }
