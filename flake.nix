@@ -8,7 +8,16 @@
     flake-utils,
     ...
   } @ inputs: let
-    days = ["day01" "day02" "day03" "day04" "day05" "day06" "day07"];
+    days = [
+      "day01"
+      "day02"
+      "day03"
+      "day04"
+      "day05"
+      "day05-rs"
+      "day06"
+      "day07"
+    ];
   in
     flake-parts.lib.mkFlake {inherit inputs;}
     {
