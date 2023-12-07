@@ -8,11 +8,12 @@ When using Nix you can execute the code for a given day with `nix run .#dayXX --
 
 ## Solutions
 
-| Day                                       | Language | Prior Experience | Part 1 | Part 2 | Solution                                    |
-| ----------------------------------------- | -------- | ---------------- | ------ | ------ | ------------------------------------------- |
-| [01](https://adventofcode.com/2023/day/1) | Nim      | ⚫⚫⚫           | ✅     | ✅     | [Link](day01/main.nim)                      |
-| [02](https://adventofcode.com/2023/day/2) | Rust     | 🟡🟡⚫           | ✅     | ✅     | [Link](day02/src/main.rs)                   |
-| [03](https://adventofcode.com/2023/day/3) | Julia    | ⚫⚫⚫           | ✅     | ✅     | [Link](day03/main.jl)                       |
-| [04](https://adventofcode.com/2023/day/4) | Ruby     | 🟡⚫⚫           | ✅     | ✅     | [Link](day04/main.rb) [Golf](day04/golf.rb) |
-| [05](https://adventofcode.com/2023/day/5) | Prolog   | 🟡⚫⚫           | ✅     | ❌     | [Link](day05/main.pl)                       |
-| [06](https://adventofcode.com/2023/day/6) | Lua      | ⚫⚫⚫           | ✅     | ✅     | [Link](day06/main.lua)                      |
+| Day                                       | Language   | Prior Experience | Part 1 | Part 2 | Solution                                    |
+| ----------------------------------------- | ---------- | ---------------- | ------ | ------ | ------------------------------------------- |
+| [01](https://adventofcode.com/2023/day/1) | Nim        | ⚫⚫⚫           | ✅     | ✅     | [Link](day01/main.nim)                      |
+| [02](https://adventofcode.com/2023/day/2) | Rust       | 🟡🟡⚫           | ✅     | ✅     | [Link](day02/src/main.rs)                   |
+| [03](https://adventofcode.com/2023/day/3) | Julia      | ⚫⚫⚫           | ✅     | ✅     | [Link](day03/main.jl)                       |
+| [04](https://adventofcode.com/2023/day/4) | Ruby       | 🟡⚫⚫           | ✅     | ✅     | [Link](day04/main.rb) [Golf](day04/golf.rb) |
+| [05](https://adventofcode.com/2023/day/5) | Prolog     | 🟡⚫⚫           | ✅     | ❌     | [Link](day05/main.pl)                       |
+| [06](https://adventofcode.com/2023/day/6) | Lua        | ⚫⚫⚫           | ✅     | ✅     | [Link](day06/main.lua)                      |
+| [07](https://adventofcode.com/2023/day/7) | Typescript | 🟡🟡🟡           | ✅     | ✅     | [Link](day07/main.ts)                       |
