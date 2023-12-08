@@ -15,4 +15,6 @@ void map_free(map_t map);
 
 void map_step(map_t map, position_t position, size_t instruction);
 
-size_t map_step_ZZZ(map_t map, position_t position);
+size_t map_steps_allZ(map_t map, position_t position);
+
+size_t map_steps_endZ(map_t map, position_t position);

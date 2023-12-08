@@ -100,33 +100,3 @@ void crossings_right(crossings_t crossings, position_t position)
     }
   }
 }
-
-void crossings_left_all(crossings_t crossings, positions_t positions)
-{
-  for (size_t i = 0; i < positions.count; i++)
-  {
-    for (size_t j = 0; j < crossings.count; j++)
-    {
-      if (position_cmp(crossings.crossings[j].location, positions.positions + (i * POSITION_SIZE)) == 0)
-      {
-        position_copy(positions.positions + (i * POSITION_SIZE), crossings.crossings[j].left);
-        break;
-      }
-    }
-  }
-}
-
-void crossings_right_all(crossings_t crossings, positions_t positions)
-{
-  for (size_t i = 0; i < positions.count; i++)
-  {
-    for (size_t j = 0; j < crossings.count; j++)
-    {
-      if (position_cmp(crossings.crossings[j].location, positions.positions + (i * POSITION_SIZE)) == 0)
-      {
-        position_copy(positions.positions + (i * POSITION_SIZE), crossings.crossings[j].right);
-        break;
-      }
-    }
-  }
-}

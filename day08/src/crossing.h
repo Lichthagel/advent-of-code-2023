@@ -39,7 +39,3 @@ void crossings_print(crossings_t crossings);
 void crossings_left(crossings_t crossings, position_t position);
 
 void crossings_right(crossings_t crossings, position_t position);
-
-void crossings_left_all(crossings_t crossings, positions_t positions);
-
-void crossings_right_all(crossings_t crossings, positions_t positions);

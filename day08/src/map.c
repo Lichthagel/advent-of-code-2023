@@ -48,11 +48,24 @@ void map_step(map_t map, position_t position, size_t instruction)
   }
 }
 
-size_t map_step_ZZZ(map_t map, position_t position)
+size_t map_steps_allZ(map_t map, position_t position)
 {
   size_t steps = 0;
 
   while (position_cmp(position, (position_t){'Z', 'Z', 'Z'}) != 0)
+  {
+    map_step(map, position, steps);
+    steps++;
+  }
+
+  return steps;
+}
+
+size_t map_steps_endZ(map_t map, position_t position)
+{
+  size_t steps = 0;
+
+  while (position[2] != 'Z')
   {
     map_step(map, position, steps);
     steps++;

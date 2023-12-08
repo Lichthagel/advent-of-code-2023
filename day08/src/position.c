@@ -44,6 +44,11 @@ void positions_add(positions_t *positions, position_t position)
   positions->count++;
 }
 
+char *positions_get(positions_t positions, size_t index)
+{
+  return positions.positions + (index * POSITION_SIZE);
+}
+
 void positions_print(positions_t positions)
 {
   printf("Positions: ");
