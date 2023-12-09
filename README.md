@@ -18,4 +18,5 @@ When using Nix you can execute the code for a given day with `nix run .#dayXX --
 |                                           | Rust       | 🟡🟡⚫           | ✅     | ✅     | [Link](day05-rs/src/main.rs)                |
 | [06](https://adventofcode.com/2023/day/6) | Lua        | ⚫⚫⚫           | ✅     | ✅     | [Link](day06/main.lua)                      |
 | [07](https://adventofcode.com/2023/day/7) | Typescript | 🟡🟡🟡           | ✅     | ✅     | [Link](day07/main.ts)                       |
-| [08](https://adventofcode.com/2023/day/8) | C          | 🟡🟡⚫           | ✅     | ✅     | [Link](day08/src/)                    |
+| [08](https://adventofcode.com/2023/day/8) | C          | 🟡🟡⚫           | ✅     | ✅     | [Link](day08/src/)                          |
+| [09](https://adventofcode.com/2023/day/9) | Erlang     | ⚫⚫⚫           | ✅     | ✅     | [Link](day09/main.escript)                  |
