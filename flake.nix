@@ -21,6 +21,7 @@
       "day09"
       "day10"
       "day11"
+      "day12"
     ];
   in
     flake-parts.lib.mkFlake {inherit inputs;}

@@ -22,3 +22,4 @@ When using Nix you can execute the code for a given day with `nix run .#dayXX --
 | [09](https://adventofcode.com/2023/day/9)  | Erlang     | ⚫⚫⚫           | ✅     | ✅     | [Link](day09/main.escript)                  |
 | [10](https://adventofcode.com/2023/day/10) | Rust       | 🟡🟡🟡           | ✅     | ✅     | [Link](day10/src/main.rs)                   |
 | [11](https://adventofcode.com/2023/day/11) | Go         | 🟡⚫⚫           | ✅     | ✅     | [Link](day11/main.go)                       |
+| [12](https://adventofcode.com/2023/day/12) | Rust       | 🟡🟡🟡           | ✅     | ❌     | [Link](day12/src/main.rs)                   |
